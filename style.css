@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+}
+@media only screen and (max-width: 600px) {
+	.head-middle {
+		font-size: .5rem!important;
+    }
+}
+/* font settings */
+body * {
+	font-family: 'Ubuntu', sans-serif;
+}
+.head-middle h1 {
+	font-family: 'Eagle Lake', cursive;
+	font-size: 2rem;
+}
+.input-form {
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+	margin: .5rem;
+}
+.input-box {
+	display: flex;
+	gap: .5rem;
+	border: 1px solid #e74c3c;
+}
+.input-box img {
+	width: 8%;
+	background: #e74c3c;
+	padding: .3rem;
+}
+input {
+	width: 100%;
+	border: none;
+}
+input:focus {
+	outline: none;
+}
+.multi-box,
+.multi-box-lable {
+	display: flex;
+	justify-content: space-between;
+	gap: .5rem;
+}
+.multi-box div {
+	width: 50%;
+	display: flex;
+	border: 1px solid #e74c3c;
+}
+.multi-box div img {
+	width: 16%;
+	background: #e74c3c;
+	padding: .3rem;
+}
+input[type=date] {
+	background: transparent;
+}
+input[type=button] {
+	padding: .75rem;
+	background: #e74c3c;
+	border-radius: 3px;
+	font-weight: bold;
+	color: #fff;
+}
+.extra {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+#exportPdf {
+	margin: .5rem;
+	border: 1px solid gray;
+}
+.head {
+	display: flex;
+}
+.head div {
+	padding: .5rem;
+	width: 33.33%;
+}
+.head-left img {
+	width: 50%;
+}
+.head-right img {
+	width: 50%;
+	display: block;
+	margin: auto;
+}
+.head-middle {
+	text-align: center;
+}
+.main {
+	border-top: 1.5px dashed rgba(0,0,0,.5);
+	border-bottom: 1.5px dashed rgba(0,0,0,.5);
+}
+.main-table-1 {
+	/*border:1px solid #C0C0C0;*/
+	border-collapse:collapse;
+	padding:5px;
+	width: 100%;
+}
+.main-table-1 th {
+	/*border:1px solid #C0C0C0;*/
+	padding:5px;
+	text-align: left;
+	/*background:#F0F0F0;*/
+}
+.main-table-1 td {
+	/*border:1px solid #C0C0C0;*/
+	padding:5px;
+}
+.main-table-2 {
+	/*border:1px solid #C0C0C0;*/
+	border-collapse:collapse;
+	width: 100%;
+}
+.main-table-2 th {
+	/*border:1px solid #C0C0C0;*/
+	padding: .5rem;
+	text-align: left;
+	/*background:#F0F0F0;*/
+}
+.main-table-2 td {
+	/*border:1px solid #C0C0C0;*/
+	padding: .5rem;
+	text-align: left;
+}
+.wrapper {
+	display: flex;
+	justify-content: flex-end;
+	padding: .5rem;
+}
+.billing-table tbody tr td:nth-child(odd) {
+	font-weight: bold;
+	text-align: right;
+	position: relative;
+	right: .8rem;
+}
+.vikash {
+	display: flex;
+	justify-content: flex-end;
+	padding: .5rem;
+}
+.vikash img {width: 10%; opacity: .8;}
+.footer {
+	color: rgba(0,0,0,.5);
+	padding: .5rem;
+	font-size: .5rem;
+}
