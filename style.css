@@ -72,6 +72,9 @@ input[type=button] {
 #exportPdf {
 	margin: .5rem;
 	border: 1px solid gray;
+	background-image: url('watermark.png');
+	background-size: cover;
+	background-position: center;
 }
 .head {
 	display: flex;
@@ -163,3 +166,9 @@ input[type=button] {
 	border-radius: 5px; 
 	box-shadow: 2px 2px 5px rgba(0,0,0,.5);
 }
+#patner {
+	background: transparent;
+	width: 100%;
+	border: none;
+}
+#patner:focus {outline: none;}
