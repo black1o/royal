@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="asset/style.css">
+<style>
+/* any style */
+.download {
+	height: 3rem;
+	width: 3rem;
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	background-color: rgba(231,77,60,.8);
+	background-image: url('asset/file.png');
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 5px; 
+	box-shadow: 2px 2px 5px rgba(0,0,0,.5);
+}
+</style>
+</head>
+<body>
+<div class="input-form"><!-- input form -->
+	
+	<div class="input-box">
+		<img src="asset/name.png">
+		<input type="text" id="name" placeholder="Guest Name">
+    </div>
+    <div class="input-box">
+		<img src="asset/id.png">
+		<input type="text" id="booking" placeholder="Booking ID">
+    </div>
+    <!-- date box -->
+    <div class="multi-box-lable"><div class="">Check IN</div><div class="">Check Out</div></div>
+    <div class="multi-box">
+    	<div class="">
+    	<img src="asset/checkin.png">
+        <input type="date" id="checkin">
+        </div>
+        
+        <div class="">
+        <img src="asset/checkout.png">
+        <input type="date" id="checkout">
+        </div>
+    </div>
+    <!-- date box end -->
+    <div class="input-box">
+		<img src="asset/mobile.png">
+		<input type="number" id="mobile" placeholder="Mobile Number">
+    </div>
+    <div class="input-box">
+		<img src="asset/room.png">
+		<input type="number" id="room" placeholder="Room Number">
+    </div>
+    <div class="input-box">
+		<img src="asset/cal.png">
+		<input type="text" id="duration" placeholder="Duration of Stay">
+    </div>
+    <div class="input-box">
+		<img src="asset/rupee.png">
+		<input type="number" id="amount" placeholder="Amount">
+    </div>
+    <div class="input-box">
+		<img src="asset/method.png">
+		<input type="text" id="mode" placeholder="Mode of Payment">
+    </div>
+    <div class="input-box">
+		<img src="asset/desk.png">
+		<input type="number" id="paid" placeholder="Paid to OYO">
+    </div>
+    <div class="input-box">
+		<img src="asset/cash.png">
+		<input type="number" id="cash" placeholder="Cash">
+    </div>
+    <div class="input-box">
+		<img src="asset/wallet.png">
+		<input type="text" id="online" placeholder="GPay, Paytm, PhonePe etc.">
+    </div>
+    <div class="input-box">
+		<img src="asset/total.png">
+		<input type="number" id="total" placeholder="Total Paid Amount">
+    </div>
+    <!-- button -->
+    <input type="button"  onclick='dataRun()' value="View Invoice">
+    <div class="download" onclick='exportPdf()'></div>
+</div><!-- input form end -->
+
+<div id="exportPdf"><!-- pdf -->
+	
+<div class="head"><!-- head -->
+	<div class="head-left">
+		<img src="asset/oyo.logo.png">
+		<h3>Invoice#</h3>
+    </div>
+    <div class="head-middle">
+    	<h1>Royal Discovery</h2>
+        <b>
+        	Ho. No: 46/34 Near Green Park Metro Station Gate Number-1 New Delhi 110016 IN.<br>
+            +91 82875-99290, +91 99 5842-9000
+        </b>
+    </div>
+    <div class="head-right">
+    	<img src="asset/head.room.jpg">
+    </div>
+</div><!-- head end -->
+	
+<div class="main"><br><!-- main -->
+<table class="main-table-1">
+	<thead>
+	<tr>
+		<th>Guest Name:</th>
+		<th>Mobile No:</th>
+		<th>Booking ID:</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td id="nameOutput"></td>
+		<td id="mobileOutput"></td>
+		<td id="bookingOutput"></td>
+	</tr>
+	</tbody>
+</table>
+
+<table class="main-table-2">
+	<thead>
+	<tr>
+		<th>Check In:</th>
+		<th>Check Out:</th>
+		<th>Duration of Stay:</th>
+		<th>Room No:</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td id="checkinOutput"></td>
+		<td id="checkoutOutput"></td>
+		<td id="durationOutput"></td>
+		<td id="roomOutput"></td>
+	</tr>
+	</tbody>
+</table>
+
+<br></div><!-- main end -->
+
+<div class="wrapper"><!-- billing -->
+<table class="billing-table">
+	<tbody>
+	<tr>
+		<td>Amount:</td>
+		<td id="amountOutput">0</td>
+	</tr>
+	<tr>
+		<td>Mode of Payment:</td>
+		<td id="modeOutput">n/a</td>
+	</tr>
+	<tr>
+		<td>Paid to OYO:</td>
+		<td id="paidOutput">0</td>
+	</tr>
+	<tr>
+		<td>Cash:</td>
+		<td id="cashOutput">0</td>
+	</tr>
+	<tr>
+		<td>Other Method (online, card etc)</td>
+		<td id="onlineOutput">n/a</td>
+	</tr>
+	<tr>
+		<td>Grand Total</td>
+		<td id="totalOutput" class="extra">0</td>
+	</tr>
+	<tbody>
+</table>
+</div><!-- billing end -->
+	
+<div class="vikash">
+	<img src="asset/vikash.png">
+</div>
+
+<div class="footer">
+	Terms & Condition<br>
+	Visit Again ♥️
+</div>
+</div><!-- pdf end -->
+
+<script>
+function dataRun() {
+ var name = document.getElementById('name').value;
+ var booking = document.getElementById('booking').value;
+ var checkin = document.getElementById('checkin').value;
+ var checkout = document.getElementById('checkout').value;
+ var mobile = document.getElementById('mobile').value;
+ var room = document.getElementById('room').value;
+ var duration = document.getElementById('duration').value;
+ var amount = document.getElementById('amount').value;
+ var mode = document.getElementById('mode').value;
+ var paid = document.getElementById('paid').value;
+ var cash = document.getElementById('cash').value;
+ var online = document.getElementById('online').value;
+var total = document.getElementById('total').value;
+
+ document.getElementById("nameOutput").innerHTML = name;
+ document.getElementById("bookingOutput").innerHTML = booking;
+ document.getElementById("checkinOutput").innerHTML = checkin;
+ document.getElementById("checkoutOutput").innerHTML = checkout;
+ document.getElementById("mobileOutput").innerHTML = mobile;
+ document.getElementById("roomOutput").innerHTML = room;
+ document.getElementById("durationOutput").innerHTML = duration;
+ document.getElementById("amountOutput").innerHTML = amount;
+ document.getElementById("modeOutput").innerHTML = mode;
+ document.getElementById("paidOutput").innerHTML = paid;
+ document.getElementById("cashOutput").innerHTML = cash;
+ document.getElementById("onlineOutput").innerHTML = online;
+document.getElementById("totalOutput").innerHTML = total;
+}
+</script>
+<script>
+function exportPdf() {
+var element = document.getElementById('exportPdf');
+var opt = {
+  margin:       0.1,
+  filename:     'invoice.pdf',
+  image:        { type: 'jpeg', quality: 1 },
+  html2canvas:  { scale: 5 },
+   jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+   };
+   // New Promise-based usage:
+  html2pdf().set(opt).from(element).save();
+
+   // Old monolithic-style usage:
+   //html2pdf(element, opt); 
+}
+</script>
+ </body>
+</html>
