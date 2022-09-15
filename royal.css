@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+}
+@media only screen and (max-width: 600px) {
+	.head-middle {
+		font-size: .5rem!important;
+		color: red;
+    }
+}
+body * {
+	font-family: 'Ubuntu', sans-serif;
+}
+.input-form {
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+	margin: .5rem;
+}
+.input-box {
+	display: flex;
+	gap: .5rem;
+	border: 1px solid #e74c3c;
+}
+.input-box img {
+	width: 1.5rem;
+	background: #e74c3c;
+	padding: .3rem;
+}
+input {
+	width: 100%;
+	border: none;
+}
+input:focus {
+	outline: none;
+}
+#patner {
+	background: transparent;
+	width: 100%;
+	border: none;
+}
+#patner:focus {
+   outline: none;
+} 
+.multi-box,
+.multi-box-lable {
+	display: flex;
+	justify-content: space-between;
+	gap: .5rem;
+}
+.multi-box div {
+	width: 50%;
+	display: flex;
+	border: 1px solid #e74c3c;
+}
+.multi-box div img {
+	width: 1.5rem;
+	background: #e74c3c;
+	padding: .3rem;
+}
+input[type=date] {
+	background: transparent;
+}
+input[type=button] {
+	padding: .75rem;
+	background: #e74c3c;
+	border-radius: 3px;
+	font-weight: bold;
+	color: #fff;
+}
+/*________________________________________*/
+#exportPdf {
+	margin: .5rem;
+	border: 1px solid gray;
+	background-image: url('watermark.png');
+	background-size: cover;
+	background-position: center;
+}
+.head {
+	display: flex;
+}
+.head div {
+	padding: .5rem;
+	width: 33.33%;
+}
+.head-left img {
+	width: 50%;
+}
+.head-right img {
+	width: 50%;
+	display: block;
+	margin: auto;
+}
+.head-middle {
+	text-align: center;
+}
+.head-middle h1 {
+	font-family: 'Eagle Lake', cursive;
+	font-size: 2rem;
+}
+.main {
+	border-top: 1.5px dashed rgba(0,0,0,.5);
+	border-bottom: 1.5px dashed rgba(0,0,0,.5);
+}
+.main-table-1 {
+	border-collapse:collapse;
+	padding:5px;
+	width: 100%;
+}
+.main-table-1 th {
+	padding:5px;
+	text-align: left;
+}
+.main-table-1 td {
+	padding:5px;
+}
+.main-table-2 {
+	border-collapse:collapse;
+	width: 100%;
+}
+.main-table-2 th {
+	padding: .5rem;
+	text-align: left;
+}
+.main-table-2 td {
+	padding: .5rem;
+	text-align: left;
+}
+/* billing table shift to right */
+.wrapper {
+	display: flex;
+	justify-content: flex-end;
+	padding: .5rem;
+}
+.billing-table tbody tr td:nth-child(odd) {
+	font-weight: bold;
+	text-align: right;
+	position: relative;
+	right: .8rem;
+}
+.wrapper-child {
+	display: flex;
+	justify-content: flex-end;
+	padding: .5rem;
+	gap: 1rem;
+}
+.wrapper-child img {
+    width: 10%; 
+    opacity: 1;
+}
+.footer {
+	color: rgba(0,0,0,.5);
+	padding: .5rem;
+	font-size: .5rem;
+}
+.download {
+	height: 3rem;
+	width: 3rem;
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	background-color: rgba(231,77,60,.8);
+	background-image: url('file.png');
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 5px; 
+	box-shadow: 2px 2px 5px rgba(0,0,0,.5);
+}
