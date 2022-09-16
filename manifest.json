@@ -1,6 +1,6 @@
 {
-  "name": "Stick-it Notes by Tharun",
-  "short_name": "Stick-it",
+  "name": "Royal Discovery",
+  "short_name": "Royal Discovery",
   "start_url": "index.html",
   "scope": "./",
   "icons": [
@@ -15,7 +15,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffd31d",
+  "theme_color": "#e74c3c;",
   "background_color": "#333",
   "display": "standalone"
 }
